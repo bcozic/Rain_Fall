@@ -1,0 +1,8 @@
+Here, we have a binary with two functions. The main, and run.
+We can see the run function is not (normally) called, and gives us
+a shell.
+The main function will call an unsafe gets on a stack buffer of size 64.
+The exploit is then easy, we overflow the buffer, add the address of the run
+function on the last four bytes and... TADAAA.
+
+The script (Ressources/exploit.sh) can be written in tmp and used as is.

@@ -1,0 +1,11 @@
+This level is acutally quite simple. The binary is made to lead us to false
+assumptions. The content of /user/home/end/.pass is read and in the stack,
+which might tempt us tu try to read it, but the resolution is actually wau simpler.
+The binary offers to open us a shell if the buffer is which it reads the pass is
+equal (strcmp) to the first argument we send. However, it uses this argument to put a
+NULL terminator inside (our outside) the buffer. If the argument is 0, the buffer will
+be treated at empty, but strcmp("\0", "0") != 0
+
+What if we send it an empty string?
+
+Congratulations graduate!

@@ -1,0 +1,13 @@
+Here, we have a binary vulnerable to format string exploits.
+It gets a string with fgets, and calls printf directly on it.
+
+After that, it loads the value on the address 0x804988c on eax.
+This value is 0, but it checks if it is equal to 64. Well, it can
+be, with the format string exploit. We put some values in the stack, 
+and see where it is loaded (with some %p).
+
+It is the fourth. Then, we just have to use the %n argument of printf
+as fourth argument to load a value into whichever adress we want.
+Guess which one ?
+
+See Ressource/exploit.sh

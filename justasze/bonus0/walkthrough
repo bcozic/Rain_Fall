@@ -1,0 +1,7 @@
+This level is about a buffer overflow via the strcat function.
+Two buffers are fille by reading the standard input (20 characters each), and then, they are concatenated.
+However, the buffer in which they are concatenated can only hold 36 characters. Thus, if the two buffers
+are full or almost, an overflow occurs. Since there is little place for a script in the stack, we used the
+environment here.
+
+The script (Ressources/exploit.sh) must be called with source, not sh, because it needs to set environment variables.

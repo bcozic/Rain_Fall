@@ -1,0 +1,31 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+
+/*
+** Once again, I call memset while they do the same thing with Repeat String
+** operators.
+*/
+
+int		main(int ac, char **av)
+{
+	char	buffer1[66];
+	char	buffer2[66];
+	FILE	*flag;
+
+	flag = fopen("/home/user/end/.pass", "r");
+	memset(buffer1, '\0', 33);
+	if (flag == NULL || ac != 2) // This way, you can't (ab)use gdb
+		return -1;
+	fread(buffer1, 1, 66, flag);
+	buffer1[65] = '\0';
+	buffer1[atoi(av[1])] = '\0';
+	fread(buffer2, 1, 65, flag);
+	fclose(flag);
+	if (strcmp(buffer1, av[1]) == 0)
+		execl("/bin/sh", "sh", NULL);
+	else
+		puts(buffer2);
+	return 0;
+}

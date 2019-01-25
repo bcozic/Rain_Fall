@@ -1,0 +1,12 @@
+This level is quite simple. We need to modify a variable on the stack which is
+placed directly after a buffer. The first argument must be a number which will
+be stocked in the stack. This is what we ought to modify.
+
+If this number is greater than 9, the program will stop. Else, the program will
+memcpy our second argument in the buffer. The length of memcpy is four time the
+first argument. The length of the buffer is 40, so we would need to write 44 bytes,
+but the max we can get (?) is 9x4 = 36.
+
+What to do then ? Exploit the overlap. It appears that -2147483637 * 4 = 44.
+
+As usual, see Ressource/exploit.sh

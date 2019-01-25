@@ -1,0 +1,16 @@
+Here, we have two structures on the heap (which means they are aligned in
+memory) each of which contains a string (also allocated in the heap).
+
+The two arguments we give to the program are strcpy-ed in the said two string.
+Here is the catch: Since the two are close in the memory, we can use the first
+string to modify the address of the second string in the structure so that
+the second strcpy will write what we want in the place we want.
+
+The flag is stored in a string at the address 0x08049960. When dumping the code,
+we find a ghost function called m that, will print this string with printf.
+Thus, we need to find a way to call this function. Since we can choose an address
+and write anything we want in it, we can search for the return address after the main
+(the next eip). It is different in gdb and in real use, but with some tries, we find
+0xbffff71a to be the good one.
+
+As usal, see Ressources/exploit.sh

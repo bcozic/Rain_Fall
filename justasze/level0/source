@@ -1,0 +1,14 @@
+#include <stdlib.h>
+
+int	main(int ac, char **av)
+{
+	if (atoi(av[1]) == 423)
+	{
+		setresgid(getegid(), getegid(), getegid());
+		setresuid(geteuid(), geteuid(), geteuid());
+		execve("/bin/sh", NULL, NULL);
+	}
+	else
+		fwrite("No !\n", 5, 1, stderr);
+	return 0;
+}

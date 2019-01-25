@@ -1,0 +1,41 @@
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+typedef struct	data
+{
+	size_t		nb;
+	char		*str;
+}				t_data;
+
+
+char	buffer[44]; // This buffer will contain the flag
+
+void	m(void)
+{
+	printf("%s - %d\n", buffer, (int)time(NULL));
+	return ;
+}
+
+int		main(int ac, char **av)
+{
+	t_data	*s1;
+	t_data	*s2;
+	FILE	*pass;
+
+	s1 = malloc(16); // Normally 8, but I double because we are on 64bit here, ptr are 8 bytes long
+	s1->nb = 1;
+	s1->str = malloc(8);
+	s2 = malloc(16); // Same as s1
+	s2->nb = 2;
+	s2->str = malloc(8);
+
+	strcpy(s1->str, av[1]); //The interesting part begins, we have here a potential overflow in the heap
+	strcpy(s2->str, av[2]);
+
+	pass = fopen("/home/user/level8/.pass", "r");
+	fgets(buffer, 44, pass);
+	puts("~~");
+	return 0;
+}

@@ -1,0 +1,14 @@
+This exploit is a little bit more technical. It combines previous ones.
+We need to exploit an overflow created by a call to strcat with a predetermined buffer.
+
+Luckily for us, the program, which will ask us a login and another string and greets us,
+will have different messages according to our location (according to the environment
+variable LANG to be correct), and thus different strings to use strcat with.
+
+So let's tell it we are from the netherlands. And let's give it two long strings as arguments.
+And let's but a shellcode in the environment.
+
+What? Is that mean?
+
+Once again, the exploit is in Ressources/ and, once again, it needs to be run with source
+(environment modificatiosn, blablablah).

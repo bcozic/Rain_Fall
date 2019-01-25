@@ -1,0 +1,6 @@
+We launch the binary level0 with gdb. It is a simple
+program: it requires one argument, use atoi on it, and
+compares the result to 0x1a7 (423). It it matches, then
+it opens a terminal as level1.
+
+The script Ressource/exploit.sh will open us a shell as level1

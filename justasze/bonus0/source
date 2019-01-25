@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+
+char	*p(char *str, char *print)
+{
+	char	buffer[4096];
+
+	puts(print);
+	read(0, buffer, 4096);
+	*strchr(buffer, '\n') = 0;
+	return strncpy(str, buffer, 20);
+}
+
+/*
+** Once again, I take the liberty to call strlen in place of the
+** custom one they use on the fly.
+*/
+char	*pp(char *str)
+{
+	int		len;
+	char	buf1[20];
+	char	buf2[20];
+
+	p(buf1, " - ");
+	p(buf2, " - ");
+	strcpy(str, buf1);
+	len = strlen(str);
+	str[len] = ' ';
+	return strcat(str, buf2);
+}
+
+int		main(void)
+{
+	char	str[36];
+
+	pp(str);
+	puts(str);
+	return 0;
+}

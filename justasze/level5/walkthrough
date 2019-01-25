@@ -1,0 +1,8 @@
+This time, this format string exploit needs to be used
+to hijack directly the eip register in order to call the
+ghost function o, which will open a shell for us.
+
+We find the adress of eip with gdb, and the adress to put
+on is the start of the o function.
+
+As usual, the script is in Ressources/exploit.sh

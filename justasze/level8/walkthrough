@@ -1,0 +1,8 @@
+This one is not exactly an exploit, but rather a work of reverse engeenering.
+The program will wait for inputs, parse commands, write code on some places,
+and if you wrote data at the right spot, it will open you a shell. No vulnerabilities
+to exploit I'm afraid.
+
+See the source. If compiled, it will work exactly as the binary.
+
+Ressource/exploit.sh will open us a shell as level9.

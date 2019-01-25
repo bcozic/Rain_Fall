@@ -1,0 +1,7 @@
+This time, we need to exploit a buffer overflow.
+There is an unsafe strcpy which can be used to modify eip,
+and thus redirect the flow of execution. The program tries
+to call a function with the pointer of eax. If we change it,
+we can call a ghost function that gives us the flag.
+
+Once again, see Ressources/exploit.sh

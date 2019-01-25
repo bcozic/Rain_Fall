@@ -1,0 +1,30 @@
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+char *p(void)
+{
+	char buff[76];
+	int next_eip;
+
+	fflush(stdout);
+	gets(buff);
+	if ((next_eip & 0xb0000000) == 0xb0000000)
+	{
+		printf("%p", (void*)next_eip); // here it works because in 32bit, pointers are 4 bytes long
+		exit(1);
+	}
+	else
+	{
+		char *c = &buff[64];
+		*(int*)(c) = next_eip;	// here, I must trick, but the assembly code does that in one instruction:
+		puts(buff);				// it puts the 4 bytes of next_eip directly in the buffer.
+		return strdup(buff);
+	}
+}
+
+int main(void)
+{
+	p();
+	return 0;
+}
