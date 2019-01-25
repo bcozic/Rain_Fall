@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*data1 = NULL;
-char	*data2 = NULL;
+char	*service = NULL;
+char	*auth = NULL;
 
 /*
 ** Here, I will take some liberties, and call some functions
@@ -14,31 +14,30 @@ char	*data2 = NULL;
 int		main(void)
 {
 	char	buffer[128];
-	start:
-	printf("%p, %p \n", data1, data2);
+
 	while (fgets(buffer, 128, stdin) != NULL)
 	{
-		printf("%p, %p \n", data1, data2);
+		printf("%p, %p \n", auth, service);
 		if (strncmp(buffer, "auth ", 5) == 0)
 		{
-			data2 = malloc(4);
-			data2[0] = '\0';
-			if (strlen(buffer + 5) < 30)
+			auth = malloc(4);
+			auth[0] = '\0';
+			if (strlen(buffer + 5) <= 30)
 			{
-				strcpy(data2, buffer + 5);
+				strcpy(auth, buffer + 5);
 			}
 		}
 		if (strncmp(buffer, "reset", 5) == 0)
 		{
-			free(data2);
+			free(auth);
 		}
 		if (strncmp(buffer, "service", 6) == 0)
 		{
-			data1 = strdup(buffer + 7);
+			service = strdup(buffer + 7);
 		}
 		if (strncmp(buffer, "login", 5) == 0)
 		{
-			if (data2[32] != 0)
+			if (auth[32] != 0)
 				system("/bin/sh");
 			else
 			{

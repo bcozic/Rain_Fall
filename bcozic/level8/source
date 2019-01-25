@@ -6,6 +6,7 @@ char	*str_auth = "auth ";
 char	*reset = "reset";
 char	*service = "service;
 char	*login = "login";
+
 int main()
 {
 	unsigned int	nb;

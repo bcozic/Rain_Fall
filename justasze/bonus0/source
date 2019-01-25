@@ -15,6 +15,7 @@ char	*p(char *str, char *print)
 /*
 ** Once again, I take the liberty to call strlen in place of the
 ** custom one they use on the fly.
+** Same thing for strcpy.
 */
 char	*pp(char *str)
 {
@@ -26,13 +27,13 @@ char	*pp(char *str)
 	p(buf2, " - ");
 	strcpy(str, buf1);
 	len = strlen(str);
-	str[len] = ' ';
+	strcpy(str, " ");
 	return strcat(str, buf2);
 }
 
 int		main(void)
 {
-	char	str[36];
+	char	str[42];
 
 	pp(str);
 	puts(str);

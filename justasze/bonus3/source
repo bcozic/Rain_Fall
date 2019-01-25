@@ -16,7 +16,7 @@ int		main(int ac, char **av)
 
 	flag = fopen("/home/user/end/.pass", "r");
 	memset(buffer1, '\0', 33);
-	if (flag == NULL || ac != 2) // This way, you can't (ab)use gdb
+	if (flag == NULL || ac != 2) // This way, you can't use gdb
 		return -1;
 	fread(buffer1, 1, 66, flag);
 	buffer1[65] = '\0';

@@ -21,8 +21,6 @@ int main(int ac, char **av)
 		execv("/bin/sh", str);
 	}
 	else
-	{
 		fwrite("No !\n", 1, 5, stderr);
-	}
 	return (0);
 }

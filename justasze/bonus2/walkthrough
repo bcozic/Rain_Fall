@@ -11,4 +11,4 @@ And let's but a shellcode in the environment.
 What? Is that mean?
 
 Once again, the exploit is in Ressources/ and, once again, it needs to be run with source
-(environment modificatiosn, blablablah).
+(environment modifications).

@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	void	(**f)(void);
 
 	str = malloc(64);
-	f = malloc(4);
+	f = malloc(sizeof(void*));
 	*f = &m;
 	strcpy(str, av[1]);
 	(**f)();

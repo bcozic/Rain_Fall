@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int		language;
+int		language = 0;
 
 /*
 ** Here, I take the liberty to call strcpy in place of their custom writing
@@ -26,7 +26,7 @@ void	greetuser(char	*user_name)
 
 int		main(int ac, char **av)
 {
-	char	arg[19];
+	char	arg[19]; // We have 80 bytes use for store the user name, it's to accord with the padding
 	char	buff1[40];
 	char	buff2[32];
 	int		padding; // It might have another use;
@@ -46,8 +46,8 @@ int		main(int ac, char **av)
 			language = 2;
 	}
 	// greet_user is called with the first 19 bytes of buff1 as parameter
-	memcpy(arg, buff1, 19);
-	greetuser(arg);
+	memcpy(str-0x50, buff1, 76);
+	greetuser(str-0x50);
 	// lea esp,[ebp-0xc]
 	return 0;
 }

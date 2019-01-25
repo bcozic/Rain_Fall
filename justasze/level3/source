@@ -1,19 +1,22 @@
-void v(void)
-{
-	int trap = 0;
-	char buf[512];
+#include <stdio.h>
+#include <stdlib.h>
 
-	fgets(buf, 512, stdin);
-	if (trap == 64)
+int m = 0;
+
+void	v(void)
+{
+	char	str[512];
+
+	fgets(str, 512, stdin);
+	printf(str);
+	if (m == '@')
 	{
-		fwrite("Wait what?!\n", 12, 1, stdout);
+		fwrite("Wait what?!\n", 1, 12, stdout);
 		system("/bin/sh");
 	}
 }
 
-
-int main(void)
+int		main()
 {
 	v();
-	return 0;
 }

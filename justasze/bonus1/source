@@ -4,13 +4,13 @@
 
 int		main(int ac, char**av)
 {
-	char	str[40];
 	int		len;
+	char	str[40];
 
 	len = atoi(av[1]);
 	if (len > 9)
 		return 1;
-	memcpy(str, av[1], len * 4);
+	memcpy(str, av[2], len * 4);
 	if (len == 1464814662) // 0x574f4c46
 		execl("/bin/sh", "sh", NULL);
 	return 0;

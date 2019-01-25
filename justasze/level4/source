@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-** Since we can't chose an adress in C, I put the var to modify here
-*/
-int		trap = 0;
+int		m = 0;
 
 void	p(char *buffer)
 {
@@ -15,14 +12,12 @@ void	n(void)
 {
 	char	buffer[512];
 	fgets(buffer, 512, stdin);
-	p (buffer);
-	if (trap == 16930116)
+	p(buffer);
+	if (m == 16930116)
 		system ("/bin/cat /home/user/level5/.pass");
-	return;
 }
 
 int		main(void)
 {
 	n();
-	return 0;
 }
