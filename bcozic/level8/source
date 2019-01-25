@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+char	**auth = 0;
+char	**service = 0;
+char	*str_auth = "auth ";
+char	*reset = "reset";
+char	*service = "service;
+char	*login = "login";
+int main()
+{
+	unsigned int	nb;
+	char			str[128];
+
+	printf("%p, %p \n", auth, service);
+	while (fgets(str, 128, stdin))
+	{
+		int	i = 0;
+		while (str[i] == str_auth[i] && i < 5)
+			i++;
+		if (str[i] == str_auth[i])
+		{
+			*auth = malloc(4);
+			**auth = 0;
+			nb = 0xffffffff;
+			i = 0;
+			while(str[5+i] && nb)
+			{
+				i++;
+				nb--;
+			}
+			if (!nb - 1 <= 30)
+				strcpy(*auth, str + 5);
+		}
+        int i = 0;
+		while (str[i] == reset[i] && i < 5)
+			i++;
+		if (str[i] == reset[i])
+			free(auth);
+		int i = 0;
+		while (str[i] == service[i] && i < 6)
+			service = strdup(str + 7);
+		int i = 0;
+		while (str[i] == login[i] && i < 5)
+			i++;
+		if (str[i] == login[i])
+		{
+			if (*auth[32])
+				system("/bin/sh");
+			else
+				fwrite("Password:\n", 1, 10, stdout);
+		}
+	}
+	return (0);
+}

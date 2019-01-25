@@ -1,0 +1,29 @@
+$>gdb level0
+gdb$>b main
+
+Breakpoint 1 at 0x8048ec3
+
+$>objdump -M intel -d level0 | grep -C 100 8048ec3
+
+ 8048ed9:	3d a7 01 00 00       	cmp    eax,0x1a7
+ 8048ede:	75 78                	jne    8048f58 <main+0x98>
+ ...
+
+ 8048f42:	8d 44 24 10          	lea    eax,[esp+0x10]
+ 8048f46:	89 44 24 04          	mov    DWORD PTR [esp+0x4],eax
+ 8048f4a:	c7 04 24 48 53 0c 08 	mov    DWORD PTR [esp],0x80c5348
+ 8048f51:	e8 ea b6 00 00       	call   8054640 <execv>
+ ...
+ 8048f58:	a1 70 e1 0e 08       	mov    eax,ds:0x80ee170
+ 8048f5d:	89 c2                	mov    edx,eax
+ 8048f5f:	b8 50 53 0c 08       	mov    eax,0x80c5350
+
+ gdb$>x/s 0x80c5350
+
+ 0x80c5350:	 "No !\n"
+
+ $>./level0 423 (8048ed9:   3d a7 01 00 00          cmp    eax,0x1a7)
+
+ sh$>cat /home/user/level1/.pass
+
+ password lvl1 : 1fe8a524fa4bec01ca4ea2a869af2a02260d4a7d5fe7e7c24d8617e6dca12d3a
