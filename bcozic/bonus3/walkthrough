@@ -1,7 +1,0 @@
-This programme open a shell if av[1] == FILE + the string in /home/user/end/.pass
-It's make a null charactere at the position of atoi(av[1]), if you enter an empty string atoi(av[1]) = 0 and strcmp(av[1], str) == 0, you have your shell
-
-./bonus3 ""
-
-password end : 3321b6f81659f9a71c76616f606e4b50189cecfea611393d5d649f75e157353c
-

