@@ -3,7 +3,7 @@ However, it can detect a tentative of overflow, and exist the program if the
 modified value for eip starts with 0xb (so any address on / near the stack).
 
 We must then use another adress. But since the string will be placed in the
-heap, we can use taht adress. There is a subtlety, though: it will place the
+heap, we can use that adress. There is a subtlety, though: it will place the
 adress we want to go near the end of the buffer (which will overwrite a part
 of it, and can make the shellcode crash). To prevent that, we will cut the
 nopsled in half, and put the shellcode in the middle of it. We just need a
