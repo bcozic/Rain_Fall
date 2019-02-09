@@ -5,7 +5,7 @@ Luckily for us, the program, which will ask us a login and another string and gr
 will have different messages according to our location (according to the environment
 variable LANG to be correct), and thus different strings to use strcat with.
 
-So let's tell it we are from the netherlands. And let's give it two long strings as arguments.
+So let's tell it we are from Finland. And let's give it two long strings as arguments.
 And let's but a shellcode in the environment.
 
 What? Is that mean?

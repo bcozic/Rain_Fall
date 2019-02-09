@@ -11,6 +11,6 @@ we find a ghost function called m that, will print this string with printf.
 Thus, we need to find a way to call this function. Since we can choose an address
 and write anything we want in it, we can search for the return address after the main
 (the next eip). It is different in gdb and in real use, but with some tries, we find
-0xbffff71a to be the good one.
+0xbffff72c to be the good one.
 
 As usal, see Ressources/exploit.sh

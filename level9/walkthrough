@@ -1,5 +1,6 @@
-This level program will trust a register for flow excecution (call edx).
-Terrible mistake. With a buffer overflow with the first argument, I can modify
-the said register to redirect the flow and excecute a shellcode.
+This level program will use a register to stock a pointer on function (call edx).
+With a buffer overflow with the first argument, we can modify
+the said pointer on the stack before it gets loaded in the register to redirect
+the flow and excecute a shellcode.
 
 Ressources/exploit.sh will open us a shell.

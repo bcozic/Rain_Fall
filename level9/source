@@ -33,15 +33,15 @@ int main(int ac, char **av)
 {
 	N	*foo;
 	N	*bar;
-	N	*toto;
-	N	*tata;
+	N	&toto;
+	N	&tata;
 
 	if (ac <= 1)
 		exit(1);
 	foo = new N(5);
 	bar = new N(6);
-	toto = foo;
-	toto = bar;
+	toto = *foo;
+	tata = *bar;
 	toto.setAnnotation(av[1]);
 	*(*tata)(tata, toto);
 }
